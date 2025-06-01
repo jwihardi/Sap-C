@@ -214,7 +214,7 @@ void parse_num(Token *tokens, uint32_t *size, const char **cursor) {
             *cursor = p;
             return;
         }
-        seen_digit = 1; // Because we will now parse digits after the dot
+        seen_digit = 1; 
     }
 
     while (*p) {
@@ -237,10 +237,7 @@ void parse_num(Token *tokens, uint32_t *size, const char **cursor) {
     size_t len = p - start;
     char *num_str = strndup(start, len);
 
-    tokens[(*size)++] = (Token){
-        .type = TOK_LITERAL,
-        .data = num_str
-    };
+    tokens[(*size)++] = (Token){ .type = TOK_LITERAL, .data = num_str };
 
     *cursor = p;
 }
