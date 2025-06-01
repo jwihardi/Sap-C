@@ -1,0 +1,3 @@
+/home/jacub/gong/CMakeFiles/gong.dir
+/home/jacub/gong/CMakeFiles/edit_cache.dir
+/home/jacub/gong/CMakeFiles/rebuild_cache.dir

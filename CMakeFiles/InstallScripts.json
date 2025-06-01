@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/jacub/gong/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
