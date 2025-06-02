@@ -61,6 +61,25 @@ void print_lexed_token(const Token token){
     case TOK_COLON: printf("TOK_COLON; "); break;
     case TOK_COMMA: printf("TOK_COMMA; "); break;
     case TOK_PERIOD: printf("TOK_PERIOD; "); break;
+    case TOK_EQUAL: printf("TOK_EQUAL; "); break;
+    case TOK_EQUALCMP: printf("TOK_EQUALCMP; "); break;
+    case TOK_NOT: printf("TOK_NOT; "); break;
+    case TOK_NOTEQUAL: printf("TOK_NOTEQUAL; "); break;
+    case TOK_AND: printf("TOK_AND; "); break;
+    case TOK_OR: printf("TOK_OR; "); break;
+    case TOK_ARROW: printf("TOK_ARROW; "); break;
+    case TOK_LESS: printf("TOK_LESS; "); break;
+    case TOK_GREATER: printf("TOK_GREATER; "); break;
+    case TOK_LESSEQ: printf("TOK_LESSEQ; "); break;
+    case TOK_GREATEREQ: printf("TOK_GREATEREQ; "); break;
+    case TOK_CLASS: printf("TOK_CLASS; "); break;
+    case TOK_PUBLIC: printf("TOK_PUBLIC; "); break;
+    case TOK_PRIVATE: printf("TOK_PRIVATE; "); break;
+    case TOK_PLUSCOMP: printf("TOK_PLUSCOMP; "); break;
+    case TOK_STARCOMP: printf("TOK_STARCOMP; "); break;
+    case TOK_SLASHCOMP: printf("TOK_SLASHCOMP; "); break;
+    case TOK_DASHCOMP: printf("TOK_DASHCOMP; "); break;
+    case TOK_AT: printf("TOK_AT; "); break;
     default: printf("ERROR"); break;
   }
   return;

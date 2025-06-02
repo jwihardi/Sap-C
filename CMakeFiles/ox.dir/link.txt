@@ -1,0 +1,1 @@
+/usr/sbin/cc -Wl,--dependency-file=CMakeFiles/ox.dir/link.d CMakeFiles/ox.dir/main.c.o CMakeFiles/ox.dir/errors/errors.c.o CMakeFiles/ox.dir/lexer/lexer.c.o -o ox

@@ -1,1 +1,0 @@
-/usr/sbin/cc -Wl,--dependency-file=CMakeFiles/gong.dir/link.d CMakeFiles/gong.dir/main.c.o CMakeFiles/gong.dir/errors/errors.c.o CMakeFiles/gong.dir/lexer/lexer.c.o -o gong

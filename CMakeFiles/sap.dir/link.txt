@@ -1,0 +1,1 @@
+/usr/sbin/cc -Wl,--dependency-file=CMakeFiles/sap.dir/link.d CMakeFiles/sap.dir/main.c.o CMakeFiles/sap.dir/errors/errors.c.o CMakeFiles/sap.dir/lexer/lexer.c.o -o sap

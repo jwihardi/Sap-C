@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/jacub/gong/cmake_install.cmake"
+		"/home/jacub/Ache/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

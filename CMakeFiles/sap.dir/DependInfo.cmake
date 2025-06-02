@@ -8,10 +8,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/jacub/gong/errors/errors.c" "CMakeFiles/gong.dir/errors/errors.c.o" "gcc" "CMakeFiles/gong.dir/errors/errors.c.o.d"
-  "/home/jacub/gong/lexer/lexer.c" "CMakeFiles/gong.dir/lexer/lexer.c.o" "gcc" "CMakeFiles/gong.dir/lexer/lexer.c.o.d"
-  "/home/jacub/gong/main.c" "CMakeFiles/gong.dir/main.c.o" "gcc" "CMakeFiles/gong.dir/main.c.o.d"
-  "" "gong" "gcc" "CMakeFiles/gong.dir/link.d"
+  "/home/jacub/Ache/errors/errors.c" "CMakeFiles/sap.dir/errors/errors.c.o" "gcc" "CMakeFiles/sap.dir/errors/errors.c.o.d"
+  "/home/jacub/Ache/lexer/lexer.c" "CMakeFiles/sap.dir/lexer/lexer.c.o" "gcc" "CMakeFiles/sap.dir/lexer/lexer.c.o.d"
+  "/home/jacub/Ache/main.c" "CMakeFiles/sap.dir/main.c.o" "gcc" "CMakeFiles/sap.dir/main.c.o.d"
+  "" "sap" "gcc" "CMakeFiles/sap.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

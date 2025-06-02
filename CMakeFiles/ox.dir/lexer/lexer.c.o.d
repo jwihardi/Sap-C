@@ -1,4 +1,4 @@
-CMakeFiles/gong.dir/lexer/lexer.c.o: /home/jacub/gong/lexer/lexer.c \
+CMakeFiles/ox.dir/lexer/lexer.c.o: /home/jacub/Ache/lexer/lexer.c \
  /usr/include/stdc-predef.h /usr/include/stdlib.h \
  /usr/include/bits/libc-header-start.h /usr/include/features.h \
  /usr/include/features-time64.h /usr/include/bits/wordsize.h \
@@ -29,5 +29,5 @@ CMakeFiles/gong.dir/lexer/lexer.c.o: /home/jacub/gong/lexer/lexer.c \
  /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h \
  /usr/include/bits/stdint-uintn.h /usr/include/bits/stdint-least.h \
- /usr/include/ctype.h /home/jacub/gong/lexer/lexer.h \
- /home/jacub/gong/lexer/tokens.h
+ /usr/include/ctype.h /home/jacub/Ache/lexer/lexer.h \
+ /home/jacub/Ache/lexer/tokens.h

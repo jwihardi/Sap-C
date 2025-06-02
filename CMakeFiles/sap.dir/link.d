@@ -1,10 +1,10 @@
-gong: \
+sap: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o \
-  CMakeFiles/gong.dir/main.c.o \
-  CMakeFiles/gong.dir/errors/errors.c.o \
-  CMakeFiles/gong.dir/lexer/lexer.c.o \
+  CMakeFiles/sap.dir/main.c.o \
+  CMakeFiles/sap.dir/errors/errors.c.o \
+  CMakeFiles/sap.dir/lexer/lexer.c.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so \
@@ -33,11 +33,11 @@ gong: \
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o:
 
-CMakeFiles/gong.dir/main.c.o:
+CMakeFiles/sap.dir/main.c.o:
 
-CMakeFiles/gong.dir/errors/errors.c.o:
+CMakeFiles/sap.dir/errors/errors.c.o:
 
-CMakeFiles/gong.dir/lexer/lexer.c.o:
+CMakeFiles/sap.dir/lexer/lexer.c.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a:
 

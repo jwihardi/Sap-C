@@ -14,7 +14,7 @@
 #define REG_FLAGS 0
   
 static regmatch_t match;
-static TokenTypes char_tokens[256] = {0};
+static TokenType char_tokens[256] = {0};
 static TrieNode *trie = NULL;
 
 Token *lex(const char *, int, int);
@@ -22,19 +22,18 @@ Token *lex(const char *, int, int);
 void init_char_tokens(void);
 
 void init_keyword_trie(void);
-void insert_keyword(TrieNode *root, const char *, TokenTypes);
+void insert_keyword(TrieNode *root, const char *, TokenType);
 TrieNode *create_trie_node(void);
-TokenTypes match_keyword(TrieNode*, const char**, size_t*);
+TokenType match_keyword(TrieNode*, const char**, size_t*);
 void parse_id(Token*, uint32_t*, const char**);
 void parse_num(Token*, uint32_t*, const char**);
-
+int match_symbol(Token *, uint32_t*, const char**);
 
 int32_t reg_check(regex_t *, const char *);
 
 Token *lex_start(const char *str){
   init_char_tokens();
   init_keyword_trie();
-
 
   uint32_t size = 0;
   uint32_t capacity = (uint32_t) strlen(str) / 4 + 2;
@@ -55,6 +54,8 @@ Token *lex_start(const char *str){
       continue;
     }
 
+    if(match_symbol(tokens, &size, &cursor)) continue;
+
     /* single character tokens */
     if(char_tokens[(unsigned char)*cursor]){
       tokens[size++] = (Token) { .type = char_tokens[(unsigned char)*cursor] };
@@ -70,7 +71,7 @@ Token *lex_start(const char *str){
     /* other tokens non-literal */
     if(isalpha(*cursor) || *cursor == '_'){
       size_t word_len = 0;
-      TokenTypes matched_type = match_keyword(trie, &cursor, &word_len);
+      TokenType matched_type = match_keyword(trie, &cursor, &word_len);
 
       if(word_len){
         tokens[size++] = (Token) { .type = matched_type };
@@ -113,9 +114,29 @@ void init_keyword_trie(void){
   insert_keyword(trie, "float32", TOK_F32);
   insert_keyword(trie, "f64", TOK_F64);
   insert_keyword(trie, "float64", TOK_F64);
+
+  /* identifiers */
+  insert_keyword(trie, "public", TOK_PUBLIC);
+  insert_keyword(trie, "private", TOK_PRIVATE);
+
+  insert_keyword(trie, "void", TOK_VOID);
+
+  /* statements */
+  insert_keyword(trie, "if", TOK_IF);
+  insert_keyword(trie, "else", TOK_ELSE);
+  insert_keyword(trie, "while", TOK_WHILE);
+  insert_keyword(trie, "for", TOK_FOR);
+  insert_keyword(trie, "switch", TOK_SWITCH);
+
+  insert_keyword(trie, "class", TOK_CLASS);
+  insert_keyword(trie, "return", TOK_RETURN);
+  insert_keyword(trie, "continue", TOK_CONTINUE);
+  insert_keyword(trie, "break", TOK_BREAK);
+
+  insert_keyword(trie, "not", TOK_NOT);
 }
 
-void insert_keyword(TrieNode *root, const char *key, TokenTypes token_type){
+void insert_keyword(TrieNode *root, const char *key, TokenType token_type){
   TrieNode *curr_node = root;
   for(const char *p = key; *p; p ++){
     unsigned char c = (unsigned char)*p;
@@ -149,13 +170,20 @@ void init_char_tokens(void){
   char_tokens['/'] = TOK_SLASH;
   char_tokens['*'] = TOK_STAR;
   char_tokens['^'] = TOK_CARET;
+  char_tokens[']'] = TOK_RSBRAC;
+  char_tokens['['] = TOK_LSBRAC;
+  char_tokens['='] = TOK_EQUAL;
+  char_tokens['>'] = TOK_GREATER;
+  char_tokens['<'] = TOK_LESS;
+  char_tokens['!'] = TOK_NOT;
+  char_tokens['@'] = TOK_AT;
 }
 
-TokenTypes match_keyword(TrieNode* root, const char** cursor, size_t* length) {
+TokenType match_keyword(TrieNode* root, const char** cursor, size_t* length) {
     TrieNode* current = root;
     const char* start = *cursor;
     const char* p = start;
-    TokenTypes last_match = 0;
+    TokenType last_match = 0;
     size_t last_match_len = 0;
     
     while (*p && (isalnum(*p) || *p == '_')) {
@@ -242,4 +270,20 @@ void parse_num(Token *tokens, uint32_t *size, const char **cursor) {
     *cursor = p;
 }
 
+int match_symbol(Token *tokens, uint32_t *size, const char **cursor){
+  if(strncmp(*cursor, "==", 2) == 0) tokens[(*size)++] = (Token) { .type = TOK_EQUALCMP };
+  else if(strncmp(*cursor, "!=", 2) == 0) tokens[(*size)++] = (Token) { .type = TOK_NOTEQUAL };
+  else if(strncmp(*cursor, "<=", 2) == 0) tokens[(*size)++] = (Token) { .type = TOK_LESSEQ };
+  else if(strncmp(*cursor, ">=", 2) == 0) tokens[(*size)++] = (Token) { .type = TOK_GREATEREQ };
+  else if(strncmp(*cursor, "&&", 2) == 0) tokens[(*size)++] = (Token) { .type = TOK_AND };
+  else if(strncmp(*cursor, "||", 2) == 0) tokens[(*size)++] = (Token) { .type = TOK_OR };
+  else if(strncmp(*cursor, "->", 2) == 0) tokens[(*size)++] = (Token) { .type = TOK_ARROW };
+  else if(strncmp(*cursor, "+=", 2) == 0) tokens[(*size)++] = (Token) { .type = TOK_PLUSCOMP };
+  else if(strncmp(*cursor, "*=", 2) == 0) tokens[(*size)++] = (Token) { .type = TOK_STARCOMP };
+  else if(strncmp(*cursor, "/=", 2) == 0) tokens[(*size)++] = (Token) { .type = TOK_SLASHCOMP };
+  else if(strncmp(*cursor, "-=", 2) == 0) tokens[(*size)++] = (Token) { .type = TOK_DASHCOMP };
+  else return 0;
+  *cursor += 2;
+  return 1;
+}
 int32_t reg_check(regex_t *regexpr, const char *cursor){ return regexec(regexpr, cursor, MATCH_N, &match, REG_FLAGS) == 0; }

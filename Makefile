@@ -57,10 +57,10 @@ RM = /usr/sbin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jacub/gong
+CMAKE_SOURCE_DIR = /home/jacub/Ache
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jacub/gong
+CMAKE_BINARY_DIR = /home/jacub/Ache
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacub/gong/CMakeFiles /home/jacub/gong//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacub/Ache/CMakeFiles /home/jacub/Ache//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacub/gong/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacub/Ache/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named gong
+# Target rules for targets named sap
 
 # Build rule for target.
-gong: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 gong
-.PHONY : gong
+sap: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 sap
+.PHONY : sap
 
 # fast build rule for target.
-gong/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gong.dir/build.make CMakeFiles/gong.dir/build
-.PHONY : gong/fast
+sap/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sap.dir/build.make CMakeFiles/sap.dir/build
+.PHONY : sap/fast
 
 errors/errors.o: errors/errors.c.o
 .PHONY : errors/errors.o
 
 # target to build an object file
 errors/errors.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gong.dir/build.make CMakeFiles/gong.dir/errors/errors.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sap.dir/build.make CMakeFiles/sap.dir/errors/errors.c.o
 .PHONY : errors/errors.c.o
 
 errors/errors.i: errors/errors.c.i
@@ -142,7 +142,7 @@ errors/errors.i: errors/errors.c.i
 
 # target to preprocess a source file
 errors/errors.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gong.dir/build.make CMakeFiles/gong.dir/errors/errors.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sap.dir/build.make CMakeFiles/sap.dir/errors/errors.c.i
 .PHONY : errors/errors.c.i
 
 errors/errors.s: errors/errors.c.s
@@ -150,7 +150,7 @@ errors/errors.s: errors/errors.c.s
 
 # target to generate assembly for a file
 errors/errors.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gong.dir/build.make CMakeFiles/gong.dir/errors/errors.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sap.dir/build.make CMakeFiles/sap.dir/errors/errors.c.s
 .PHONY : errors/errors.c.s
 
 lexer/lexer.o: lexer/lexer.c.o
@@ -158,7 +158,7 @@ lexer/lexer.o: lexer/lexer.c.o
 
 # target to build an object file
 lexer/lexer.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gong.dir/build.make CMakeFiles/gong.dir/lexer/lexer.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sap.dir/build.make CMakeFiles/sap.dir/lexer/lexer.c.o
 .PHONY : lexer/lexer.c.o
 
 lexer/lexer.i: lexer/lexer.c.i
@@ -166,7 +166,7 @@ lexer/lexer.i: lexer/lexer.c.i
 
 # target to preprocess a source file
 lexer/lexer.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gong.dir/build.make CMakeFiles/gong.dir/lexer/lexer.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sap.dir/build.make CMakeFiles/sap.dir/lexer/lexer.c.i
 .PHONY : lexer/lexer.c.i
 
 lexer/lexer.s: lexer/lexer.c.s
@@ -174,7 +174,7 @@ lexer/lexer.s: lexer/lexer.c.s
 
 # target to generate assembly for a file
 lexer/lexer.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gong.dir/build.make CMakeFiles/gong.dir/lexer/lexer.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sap.dir/build.make CMakeFiles/sap.dir/lexer/lexer.c.s
 .PHONY : lexer/lexer.c.s
 
 main.o: main.c.o
@@ -182,7 +182,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gong.dir/build.make CMakeFiles/gong.dir/main.c.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sap.dir/build.make CMakeFiles/sap.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -190,7 +190,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gong.dir/build.make CMakeFiles/gong.dir/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sap.dir/build.make CMakeFiles/sap.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -198,7 +198,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gong.dir/build.make CMakeFiles/gong.dir/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sap.dir/build.make CMakeFiles/sap.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -209,7 +209,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... gong"
+	@echo "... sap"
 	@echo "... errors/errors.o"
 	@echo "... errors/errors.i"
 	@echo "... errors/errors.s"

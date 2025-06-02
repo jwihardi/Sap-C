@@ -1,4 +1,4 @@
-CMakeFiles/gong.dir/main.c.o: /home/jacub/gong/main.c \
+CMakeFiles/sap.dir/main.c.o: /home/jacub/Ache/main.c \
  /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/bits/libc-header-start.h /usr/include/features.h \
  /usr/include/features-time64.h /usr/include/bits/wordsize.h \
@@ -36,6 +36,6 @@ CMakeFiles/gong.dir/main.c.o: /home/jacub/gong/main.c \
  /usr/include/bits/stdint-uintn.h /usr/include/bits/stdint-least.h \
  /usr/include/string.h /usr/include/bits/types/locale_t.h \
  /usr/include/bits/types/__locale_t.h /usr/include/strings.h \
- /usr/include/ctype.h /home/jacub/gong/errors/errors.h \
- /home/jacub/gong/lexer/lexer.h /home/jacub/gong/lexer/tokens.h \
- /home/jacub/gong/lexer/tokens.h
+ /usr/include/ctype.h /home/jacub/Ache/errors/errors.h \
+ /home/jacub/Ache/lexer/lexer.h /home/jacub/Ache/lexer/tokens.h \
+ /home/jacub/Ache/lexer/tokens.h

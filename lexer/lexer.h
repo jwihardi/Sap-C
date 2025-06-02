@@ -7,7 +7,7 @@ Token *lex_start(const char *);
 
 typedef struct TrieNode {
     struct TrieNode *children[256];
-    TokenTypes token_type;
+    TokenType token_type;
     int is_valid;
 } TrieNode;
 

@@ -1,1 +1,9 @@
-.12
+public class fart {
+
+
+private i32 foo(i32 size) -> i32{
+    return size++;
+}
+
+
+}
